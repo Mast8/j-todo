@@ -1,17 +1,17 @@
-/* const inputBox = document.getElementById("input-box");*/
+
 const listContainer = document.getElementById("list"); 
 const todoForm = document.querySelector(".todo-form");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-//function addTask( ){
+
 todoForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const input = this.name;
     const inputValue = input.value;
 
     if(inputValue === ""){
-        alert("wirte a todo")
+        alert("Write a todo")
     }else {
         const task = {
             id: new Date().getTime(),
@@ -21,9 +21,7 @@ todoForm.addEventListener("submit", function (e) {
         tasks.push(task);
         createTask(task);
         console.log(task);
-       
     }
-
     input.focus();
 });
 
@@ -53,12 +51,20 @@ function createTask(task) {
     `;
     taskEl.innerHTML = taskElMarkup;
     listContainer.appendChild(taskEl);
-    //countTasks();
+
   }
 
-  /* function countTasks() {
-    totalTasks.textContent = tasks.length;
-    const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
-    completedTasks.textContent = completedTasksArray.length;
-    remainingTasks.textContent = tasks.length - completedTasksArray.length;
-  } */
+  listContainer.addEventListener("click", (e) => {
+    if (
+      e.target.classList.contains("remove-task") ||
+      e.target.parentElement.classList.contains("remove-task")
+    ) {
+      const taskId = e.target.closest("li").id;
+      removeTask(taskId);
+    }
+  });
+
+  function removeTask(taskId) {
+    tasks = tasks.filter((task) => task.id !== parseInt(taskId));
+    document.getElementById(taskId).remove();
+  }
