@@ -2,6 +2,12 @@
 const listContainer = document.getElementById("list"); 
 const todoForm = document.querySelector(".todo-form");
 
+const totalTasks = document.querySelector(".total-tasks span");
+const completedTasks = document.querySelector(".completed-tasks span");
+const remainingTasks = document.querySelector(".remaining-tasks span");
+
+const percentage = document.querySelector(".percentage");
+
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 if (localStorage.getItem("tasks")) {
@@ -49,10 +55,10 @@ function createTask(task) {
         </div>
       
     `;
+    countTasks();
     taskEl.innerHTML = taskElMarkup;
     listContainer.appendChild(taskEl);
-
-  }
+}
 
 
   listContainer.addEventListener("click", (e) => {
@@ -69,6 +75,7 @@ function createTask(task) {
     tasks = tasks.filter((task) => task.id !== parseInt(taskId));
     document.getElementById(taskId).remove();
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    countTasks();
   }
 
   listContainer.addEventListener("input", (e) => {
@@ -77,20 +84,32 @@ function createTask(task) {
   });
   
   function updateTask(taskId, el) {
-    const task = tasks.find((task) => task.id === parseInt(taskId));
+  const task = tasks.find((task) => task.id === parseInt(taskId));
   
     if (el.hasAttribute("contentEditable")) {
       task.name = el.textContent;
     } else {
-      const span = el.nextElementSibling.nextElementSibling;
-      task.isCompleted = !task.isCompleted;
-      if (task.isCompleted) {
-        span.removeAttribute("contenteditable");
-        el.setAttribute("checked", "");
-      } else {
-        el.removeAttribute("checked");
-        span.setAttribute("contenteditable", "");
+        const span = el.nextElementSibling.nextElementSibling;
+        task.isCompleted = !task.isCompleted;
+        if (task.isCompleted) {
+          span.removeAttribute("contenteditable");
+          el.setAttribute("checked", "");
+        } else {
+          el.removeAttribute("checked");
+          span.setAttribute("contenteditable", "");
+        }
       }
-    }
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    countTasks();
+  }
+
+  function countTasks() {
+    totalTasks.textContent = tasks.length;
+    const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
+    completedTasks.textContent = completedTasksArray.length;
+    remainingTasks.textContent = tasks.length - completedTasksArray.length;
+    //Percentage of completed tasks
+    let round = Math.round((completedTasksArray.length/tasks.length)*100) 
+    round > 50 ? percentage.className = "percentage good" : percentage.className = "percentage bad" ; 
+    percentage.textContent = round +"%";
   }

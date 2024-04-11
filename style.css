@@ -1,7 +1,12 @@
 *{
+    /* background-color: #45474d; */
 
+  
+}
 
-  box-sizing: border-box;
+h1 {
+    display: grid;
+    justify-content: center;
 }
 
 .row {
@@ -11,12 +16,13 @@
 }
 
 ul {
-    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
     display: block;
 }
 
 li {
-   background-color: grey;
+    background-color: grey;
     display: grid;
     border-radius: 10px;
     border: 2px solid white;
@@ -25,14 +31,25 @@ li {
 input {
     padding: 10px;
 }
+
 span {
+    padding: 5px;
+}
+.add {
     padding: 10px;
 }
-
 button {
+    font-weight: bold;
     padding-inline: 10px;
-    
+    cursor: pointer;
 }
+
+button:hover {
+    color: grey;
+    
+    background-color: aquamarine;
+}
+
 
 .checkbox-wrapper {
     padding: 5px;
@@ -45,3 +62,20 @@ button {
     opacity: 0.5;
 }
 
+.percentage {
+    font-size: 50px;
+    font-weight: bold;
+}
+.good {
+    color: green;
+}
+.bad {
+    color: red;
+}
+
+.todo-stats {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    
+}
