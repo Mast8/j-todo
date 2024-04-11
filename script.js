@@ -42,23 +42,18 @@ function createTask(task) {
       task.isCompleted ? "checked" : ""
     }>
         <label for="${task.name}-${task.id}">
-          <div class="checkbox-empty">
-            <use xlink:href="#checkbox_empty"></use>
-          </div>
-          <div class="checkmark">
-            <use xlink:href="#checkmark"></use>
-          </div>
+          <div class="checkbox-empty"></div>
         </label>
         <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}</span>
-      </div>
-      <button class="remove-task" title="Remove ${task.name} task">X
-        
-      </button>
+        <button class="remove-task" title="Remove ${task.name} task">X </button>
+        </div>
+      
     `;
     taskEl.innerHTML = taskElMarkup;
     listContainer.appendChild(taskEl);
 
   }
+
 
   listContainer.addEventListener("click", (e) => {
     if (
@@ -73,5 +68,29 @@ function createTask(task) {
   function removeTask(taskId) {
     tasks = tasks.filter((task) => task.id !== parseInt(taskId));
     document.getElementById(taskId).remove();
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  listContainer.addEventListener("input", (e) => {
+    const taskId = e.target.closest("li").id;
+    updateTask(taskId, e.target);
+  });
+  
+  function updateTask(taskId, el) {
+    const task = tasks.find((task) => task.id === parseInt(taskId));
+  
+    if (el.hasAttribute("contentEditable")) {
+      task.name = el.textContent;
+    } else {
+      const span = el.nextElementSibling.nextElementSibling;
+      task.isCompleted = !task.isCompleted;
+      if (task.isCompleted) {
+        span.removeAttribute("contenteditable");
+        el.setAttribute("checked", "");
+      } else {
+        el.removeAttribute("checked");
+        span.setAttribute("contenteditable", "");
+      }
+    }
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }

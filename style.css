@@ -1,0 +1,47 @@
+*{
+
+
+  box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    padding: 5px;
+    display: block;
+}
+
+li {
+   background-color: grey;
+    display: grid;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+input {
+    padding: 10px;
+}
+span {
+    padding: 10px;
+}
+
+button {
+    padding-inline: 10px;
+    
+}
+
+.checkbox-wrapper {
+    padding: 5px;
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.list [type="checkbox"]:checked ~ span {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
