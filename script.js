@@ -4,6 +4,11 @@ const todoForm = document.querySelector(".todo-form");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+if (localStorage.getItem("tasks")) {
+  tasks.map((task) => {
+    createTask(task);
+  });
+}
 
 todoForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -21,6 +26,8 @@ todoForm.addEventListener("submit", function (e) {
         tasks.push(task);
         createTask(task);
         console.log(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        todoForm.reset();
     }
     input.focus();
 });
@@ -28,25 +35,24 @@ todoForm.addEventListener("submit", function (e) {
 function createTask(task) {
     const taskEl = document.createElement("li");
     taskEl.setAttribute("id", task.id);
+
     const taskElMarkup = `
       <div class="checkbox-wrapper">
         <input type="checkbox" id="${task.name}-${task.id}" name="tasks" ${
       task.isCompleted ? "checked" : ""
     }>
         <label for="${task.name}-${task.id}">
-          <svg class="checkbox-empty">
+          <div class="checkbox-empty">
             <use xlink:href="#checkbox_empty"></use>
-          </svg>
-          <svg class="checkmark">
+          </div>
+          <div class="checkmark">
             <use xlink:href="#checkmark"></use>
-          </svg>
+          </div>
         </label>
         <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}</span>
       </div>
-      <button class="remove-task" title="Remove ${task.name} task">
-        <svg>
-          <use xlink:href="#close"></use>
-        </svg>
+      <button class="remove-task" title="Remove ${task.name} task">X
+        
       </button>
     `;
     taskEl.innerHTML = taskElMarkup;
@@ -67,4 +73,5 @@ function createTask(task) {
   function removeTask(taskId) {
     tasks = tasks.filter((task) => task.id !== parseInt(taskId));
     document.getElementById(taskId).remove();
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }
