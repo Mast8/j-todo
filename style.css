@@ -1,8 +1,4 @@
-*{
-    /* background-color: #45474d; */
 
-  
-}
 
 h1 {
     display: grid;
@@ -16,9 +12,10 @@ h1 {
 }
 
 ul {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
     display: block;
+    width;
 }
 
 li {
@@ -26,6 +23,7 @@ li {
     display: grid;
     border-radius: 10px;
     border: 2px solid white;
+    padding-left: 30px;
 }
 
 input {
@@ -34,10 +32,13 @@ input {
 
 span {
     padding: 5px;
+    width: 80%;
 }
+
 .add {
     padding: 10px;
 }
+
 button {
     font-weight: bold;
     padding-inline: 10px;
@@ -59,6 +60,7 @@ button:hover {
 
 .list [type="checkbox"]:checked ~ span {
     text-decoration: line-through;
+    
     opacity: 0.5;
 }
 
@@ -66,9 +68,11 @@ button:hover {
     font-size: 50px;
     font-weight: bold;
 }
+
 .good {
     color: green;
 }
+
 .bad {
     color: red;
 }

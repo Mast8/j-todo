@@ -44,7 +44,7 @@ function createTask(task) {
 
     const taskElMarkup = `
       <div class="checkbox-wrapper">
-        <input type="checkbox" id="${task.name}-${task.id}" name="tasks" ${
+        <input type="checkbox" id="${task.name}-${task.id}" class="checkbox" name="tasks" ${
       task.isCompleted ? "checked" : ""
     }>
         <label for="${task.name}-${task.id}">
