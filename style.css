@@ -15,7 +15,7 @@ ul {
     padding-right: 40px;
     padding-left: 40px;
     display: block;
-    width;
+    
 }
 
 li {
@@ -40,6 +40,7 @@ span {
 }
 
 button {
+    border-radius: 5px;
     font-weight: bold;
     padding-inline: 10px;
     cursor: pointer;
@@ -50,7 +51,6 @@ button:hover {
     
     background-color: aquamarine;
 }
-
 
 .checkbox-wrapper {
     padding: 5px;
@@ -74,6 +74,7 @@ button:hover {
 }
 
 .bad {
+    text-align: center;
     color: red;
 }
 
