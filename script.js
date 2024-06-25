@@ -21,8 +21,8 @@ todoForm.addEventListener("submit", function (e) {
     const input = this.name;
     const inputValue = input.value;
 
-    if(inputValue === ""){
-        alert("Write a todo")
+    if(inputValue.trim() === ""){
+        alert("Todo is blank")
     }else {
         const task = {
             id: new Date().getTime(),
