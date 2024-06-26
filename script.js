@@ -21,9 +21,10 @@ todoForm.addEventListener("submit", function (e) {
     const input = this.name;
     const inputValue = input.value;
 
-    if(inputValue.trim() === ""){
-        alert("Todo is blank")
-    }else {
+    /* if(inputValue.trim() === ""){
+        alert("Todo is blank") */
+    if(validate(inputValue)){
+
         const task = {
             id: new Date().getTime(),
             name: inputValue,
@@ -37,6 +38,15 @@ todoForm.addEventListener("submit", function (e) {
     }
     input.focus();
 });
+
+function validate(input){
+  res = false;
+  if(input.trim() === "")
+    alert("Todo is blank");
+ 
+  else res = true;
+  return res;
+}
 
 function createTask(task) {
     const taskEl = document.createElement("li");
