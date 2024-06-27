@@ -21,10 +21,7 @@ todoForm.addEventListener("submit", function (e) {
     const input = this.name;
     const inputValue = input.value;
 
-    /* if(inputValue.trim() === ""){
-        alert("Todo is blank") */
     if(validate(inputValue)){
-
         const task = {
             id: new Date().getTime(),
             name: inputValue,
@@ -43,7 +40,7 @@ function validate(input){
   res = false;
   if(input.trim() === "")
     alert("Todo is blank");
- 
+
   else res = true;
   return res;
 }
@@ -61,6 +58,7 @@ function createTask(task) {
           <div class="checkbox-empty"></div>
         </label>
         <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}</span>
+         
         <button class="remove-task" title="Remove ${task.name} task">X </button>
         </div>
       
@@ -114,12 +112,20 @@ function createTask(task) {
   }
 
   function countTasks() {
-    totalTasks.textContent = tasks.length;
-    const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
-    completedTasks.textContent = completedTasksArray.length;
-    remainingTasks.textContent = tasks.length - completedTasksArray.length;
+    
     //Percentage of completed tasks
-    let round = Math.round((completedTasksArray.length/tasks.length)*100) 
-    round > 50 ? percentage.className = "percentage good" : percentage.className = "percentage bad" ; 
-    percentage.textContent = round +"%";
+    
+    
+    if(tasks.length > 0 ){
+      
+      totalTasks.textContent = tasks.length;
+      const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
+      completedTasks.textContent = completedTasksArray.length;
+      remainingTasks.textContent = tasks.length - completedTasksArray.length;
+      round = Math.round((completedTasksArray.length/tasks.length)*100);
+      round > 50 ? percentage.className = "percentage good" : percentage.className = "percentage bad" ; 
+      percentage.textContent = round +"%";
+    }
+    else percentage.textContent = "";
+      
   }
