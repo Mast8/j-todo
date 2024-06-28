@@ -114,18 +114,22 @@ function createTask(task) {
   function countTasks() {
     
     //Percentage of completed tasks
-    
-    
-    if(tasks.length > 0 ){
-      
+      //cout task
       totalTasks.textContent = tasks.length;
       const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
       completedTasks.textContent = completedTasksArray.length;
       remainingTasks.textContent = tasks.length - completedTasksArray.length;
+
+    
+      showPercentage(completedTasksArray);
+      
+  }
+
+  function showPercentage ( completedTasksArray) {
+    if(tasks.length > 0 ){
       round = Math.round((completedTasksArray.length/tasks.length)*100);
       round > 50 ? percentage.className = "percentage good" : percentage.className = "percentage bad" ; 
       percentage.textContent = round +"%";
     }
     else percentage.textContent = "";
-      
   }
