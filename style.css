@@ -1,8 +1,11 @@
-
+body {
+    background-color: darkgrey;
+}
 
 h1 {
     display: grid;
     justify-content: center;
+    padding-top: 25px;
 }
 
 .row {
@@ -24,6 +27,7 @@ li {
     border-radius: 10px;
     border: 2px solid white;
     padding-left: 30px;
+    margin:0 0 10px 0;   
 }
 
 input {
