@@ -26,7 +26,7 @@ li {
     display: grid;
     border-radius: 10px;
     border: 2px solid white;
-    padding-left: 30px;
+    padding-left: 40px;
     margin:0 0 10px 0;   
 }
 
@@ -74,12 +74,12 @@ button:hover {
 }
 
 .good {
-    color: green;
+    color: rgb(15, 71, 15);
 }
 
 .bad {
     text-align: center;
-    color: red;
+    color: rgb(170, 26, 26);
 }
 
 .todo-stats {
