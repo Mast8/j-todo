@@ -59,7 +59,7 @@ function createTask(task) {
         </label>
         <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}</span>
          
-        <button class="remove-task" title="Remove ${task.name} task">X </button>
+        <button class="remove-task" title="Remove ${task.name} ">X </button>
         </div>
       
     `;
@@ -92,7 +92,7 @@ function createTask(task) {
   });
   
   function updateTask(taskId, el) {
-  const task = tasks.find((task) => task.id === parseInt(taskId));
+    const task = tasks.find((task) => task.id === parseInt(taskId));
   
     if (el.hasAttribute("contentEditable")) {
       task.name = el.textContent;
@@ -114,7 +114,6 @@ function createTask(task) {
   function countTasks() {
     
     //Percentage of completed task
-    
       totalTasks.textContent = tasks.length;
       const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
       
@@ -122,8 +121,6 @@ function createTask(task) {
       remainingTasks.textContent = tasks.length - completedTasksArray.length;
       showPercentage(completedTasksArray);
     
-        
-       
   }
 
   function showPercentage ( completedTasksArray) {

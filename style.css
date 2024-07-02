@@ -52,8 +52,11 @@ button {
 
 button:hover {
     color: grey;
-    
     background-color: aquamarine;
+}
+
+.remove-task:hover {
+    background-color: rgb(170, 26, 26);
 }
 
 .checkbox-wrapper {
@@ -64,7 +67,6 @@ button:hover {
 
 .list [type="checkbox"]:checked ~ span {
     text-decoration: line-through;
-    
     opacity: 0.5;
 }
 
