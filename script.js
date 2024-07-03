@@ -22,9 +22,12 @@ todoForm.addEventListener("submit", function (e) {
     const inputValue = input.value;
 
     if(validate(inputValue)){
+      const date = new Date();
+      let custom_date = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
         const task = {
             id: new Date().getTime(),
             name: inputValue,
+            date: custom_date,
             isCompleted: false
         };
         tasks.push(task);
@@ -56,9 +59,12 @@ function createTask(task) {
     }>
         <label for="${task.name}-${task.id}">
           <div class="checkbox-empty"></div>
-        </label>
-        <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}</span>
          
+        </label>
+       
+          
+        <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}   </span>
+         <label "contenteditable"> ${task.date} </label>
         <button class="remove-task" title="Remove ${task.name} ">X </button>
         </div>
       
