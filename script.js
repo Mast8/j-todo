@@ -51,6 +51,8 @@ function validate(input){
 function createTask(task) {
     const taskEl = document.createElement("li");
     taskEl.setAttribute("id", task.id);
+    let classLI = task.isCompleted ? "completed" : "progress";
+    taskEl.className = classLI;
 
     const taskElMarkup = `
       <div class="checkbox-wrapper">
@@ -70,6 +72,8 @@ function createTask(task) {
       
     `;
     countTasks();
+    /* let classLI = !task.isCompleted ? "completed" : "progress";
+     taskEl.className = classLI; */
     taskEl.innerHTML = taskElMarkup;
     listContainer.appendChild(taskEl);
 }
@@ -99,7 +103,10 @@ function createTask(task) {
   
   function updateTask(taskId, el) {
     const task = tasks.find((task) => task.id === parseInt(taskId));
-  
+    let classLI = task.isCompleted ? "completed" : "progress";
+    //el
+    el.closest("li").className = classLI;
+
     if (el.hasAttribute("contentEditable")) {
       task.name = el.textContent;
     } else {

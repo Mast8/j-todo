@@ -1,3 +1,9 @@
+
+:root {
+    --green: rgb(15, 71, 15);
+    --red: rgb(170, 26, 26);
+}
+
 body {
     background-color: darkgrey;
 }
@@ -23,11 +29,21 @@ ul {
 
 li {
     background-color: grey;
+   
     display: grid;
     border-radius: 10px;
-    border: 2px solid white;
+   /*  border: 2px solid white; */
     padding-left: 40px;
     margin:0 0 10px 0;   
+    align-items: baseline;
+}
+
+.completed {
+    border-left: 10px solid var(--green);
+}
+
+.progress {
+    border-left: 10px solid var(--red);
 }
 
 input {
@@ -76,12 +92,12 @@ button:hover {
 }
 
 .good {
-    color: rgb(15, 71, 15);
+    color: var(--green);
 }
 
 .bad {
     text-align: center;
-    color: rgb(170, 26, 26);
+    color: var(--red);
 }
 
 .todo-stats {
