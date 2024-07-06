@@ -2,6 +2,8 @@
 :root {
     --green: rgb(15, 71, 15);
     --red: rgb(170, 26, 26);
+    --grey: grey;
+    --aqua: aquamarine;
 }
 
 body {
@@ -28,7 +30,7 @@ ul {
 }
 
 li {
-    background-color: grey;
+    background-color: var(--grey);
    
     display: grid;
     border-radius: 10px;
@@ -60,6 +62,7 @@ span {
 }
 
 button {
+    margin-left: 5px;
     border-radius: 5px;
     font-weight: bold;
     padding-inline: 10px;
@@ -67,12 +70,12 @@ button {
 }
 
 button:hover {
-    color: grey;
-    background-color: aquamarine;
+    color: var(--grey);
+    background-color: var(--aqua);
 }
 
 .remove-task:hover {
-    background-color: rgb(170, 26, 26);
+    background-color: var(--red);
 }
 
 .checkbox-wrapper {

@@ -48,10 +48,16 @@ function validate(input){
   return res;
 }
 
+function liStatus(task){
+  var classLI = task.isCompleted ? "completed" : "progress";
+  return classLI;
+}
+
 function createTask(task) {
     const taskEl = document.createElement("li");
     taskEl.setAttribute("id", task.id);
-    let classLI = task.isCompleted ? "completed" : "progress";
+    //change li class
+    let classLI = liStatus(task);
     taskEl.className = classLI;
 
     const taskElMarkup = `
@@ -72,8 +78,7 @@ function createTask(task) {
       
     `;
     countTasks();
-    /* let classLI = !task.isCompleted ? "completed" : "progress";
-     taskEl.className = classLI; */
+    
     taskEl.innerHTML = taskElMarkup;
     listContainer.appendChild(taskEl);
 }
@@ -103,9 +108,9 @@ function createTask(task) {
   
   function updateTask(taskId, el) {
     const task = tasks.find((task) => task.id === parseInt(taskId));
+    //change class element
     let classLI = task.isCompleted ? "completed" : "progress";
-    //el
-    el.closest("li").className = classLI;
+    //el.closest("li").className = classLI;
 
     if (el.hasAttribute("contentEditable")) {
       task.name = el.textContent;
@@ -119,7 +124,9 @@ function createTask(task) {
           el.removeAttribute("checked");
           span.setAttribute("contenteditable", "");
         }
+       
       }
+    el.closest("li").className = classLI;
     localStorage.setItem("tasks", JSON.stringify(tasks));
     countTasks();
   }
