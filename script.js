@@ -109,14 +109,13 @@ function createTask(task) {
   function updateTask(taskId, el) {
     const task = tasks.find((task) => task.id === parseInt(taskId));
     //change class element
-    let classLI = task.isCompleted ? "completed" : "progress";
-    //el.closest("li").className = classLI;
 
     if (el.hasAttribute("contentEditable")) {
       task.name = el.textContent;
     } else {
         const span = el.nextElementSibling.nextElementSibling;
         task.isCompleted = !task.isCompleted;
+        
         if (task.isCompleted) {
           span.removeAttribute("contenteditable");
           el.setAttribute("checked", "");
@@ -126,6 +125,7 @@ function createTask(task) {
         }
        
       }
+    let classLI = task.isCompleted ? "completed" : "progress";
     el.closest("li").className = classLI;
     localStorage.setItem("tasks", JSON.stringify(tasks));
     countTasks();
