@@ -43,8 +43,9 @@ function validate(input){
   res = false;
   if(input.trim() === "")
     alert("Todo is blank");
-
-  else res = true;
+  else if(input.trim().length < 3 ){
+    alert("Todo is too short");
+  } else res = true;
   return res;
 }
 
@@ -70,7 +71,6 @@ function createTask(task) {
          
         </label>
        
-          
         <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}   </span>
          <label "contenteditable"> ${task.date} </label>
         <button class="remove-task" title="Remove ${task.name} ">X </button>
@@ -82,7 +82,6 @@ function createTask(task) {
     taskEl.innerHTML = taskElMarkup;
     listContainer.appendChild(taskEl);
 }
-
 
   listContainer.addEventListener("click", (e) => {
     if (

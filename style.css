@@ -3,7 +3,7 @@
     --green: rgb(15, 71, 15);
     --red: rgb(170, 26, 26);
     --grey: grey;
-    --aqua: aquamarine;
+    --aqua: rgb(86, 128, 114);
 }
 
 body {
@@ -69,11 +69,12 @@ button {
 }
 
 button:hover {
-    color: var(--grey);
+    color: white;
     background-color: var(--aqua);
 }
 
 .remove-task:hover {
+   
     background-color: var(--red);
 }
 
