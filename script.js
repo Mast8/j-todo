@@ -7,8 +7,13 @@ const completedTasks = document.querySelector(".completed-tasks span");
 const remainingTasks = document.querySelector(".remaining-tasks span");
 
 const percentage = document.querySelector(".percentage");
+const dateNow = document.querySelector(".dateToday");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+//date
+const now = new Date(); 
+dateNow.textContent = now;
 
 if (localStorage.getItem("tasks")) {
   tasks.map((task) => {
@@ -21,14 +26,19 @@ todoForm.addEventListener("submit", function (e) {
     const input = this.name;
     const inputValue = input.value;
 
+    let randomNumber = Math.floor(Math.random() * 16777215);
+
     if(validate(inputValue)){
       const date = new Date();
-      let custom_date = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+      
+      let custom_date =  (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear() ;
         const task = {
             id: new Date().getTime(),
             name: inputValue,
             date: custom_date,
-            isCompleted: false
+            isCompleted: false,
+            color: "red"
+
         };
         tasks.push(task);
         createTask(task);
@@ -62,16 +72,16 @@ function createTask(task) {
     taskEl.className = classLI;
 
     const taskElMarkup = `
-      <div class="checkbox-wrapper">
-        <input type="checkbox" id="${task.name}-${task.id}" class="checkbox" name="tasks" ${
-      task.isCompleted ? "checked" : ""
+      <div class="checkbox-wrapper" style="background=${task.color}">
+        <input type="checkbox" id="${task.name}-${task.id}" class="checkbox" name="tasks"  ${
+      task.isCompleted ? "checked" : "" 
     }>
         <label for="${task.name}-${task.id}">
           <div class="checkbox-empty"></div>
-         
+
         </label>
        
-        <span ${!task.isCompleted ? "contenteditable" : ""}>${task.name}   </span>
+        <span class="title" ${!task.isCompleted ? "contenteditable" : ""}>${task.name}   </span>
          <label "contenteditable"> ${task.date} </label>
         <button class="remove-task" title="Remove ${task.name} ">X </button>
         </div>
@@ -143,10 +153,13 @@ function createTask(task) {
   }
 
   function showPercentage ( completedTasksArray) {
+
+    
     if(getTasks()){
       round = Math.round((completedTasksArray.length/tasks.length)*100);
       round > 50 ? percentage.className = "percentage good" : percentage.className = "percentage bad" ; 
       percentage.textContent = round +"%";
+
     }
     else percentage.textContent = "";
   }
