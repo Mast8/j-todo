@@ -94,6 +94,7 @@ button:hover {
 
 .percentage {
     font-size: 50px;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -102,7 +103,6 @@ button:hover {
 }
 
 .bad {
-    text-align: center;
     color: var(--red);
 }
 

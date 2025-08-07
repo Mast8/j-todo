@@ -26,7 +26,9 @@ todoForm.addEventListener("submit", function (e) {
     const input = this.name;
     const inputValue = input.value;
 
-    let randomNumber = Math.floor(Math.random() * 16777215);
+    //color generator
+    var randomColor = "#000000".replace(/0/g,function(){return (~~(Math.random()*16)).toString(16);});
+
 
     if(validate(inputValue)){
       const date = new Date();
@@ -37,7 +39,7 @@ todoForm.addEventListener("submit", function (e) {
             name: inputValue,
             date: custom_date,
             isCompleted: false,
-            color: "red"
+            color: randomColor
 
         };
         tasks.push(task);
@@ -72,7 +74,8 @@ function createTask(task) {
     taskEl.className = classLI;
 
     const taskElMarkup = `
-      <div class="checkbox-wrapper" style="background=${task.color}">
+      <div class="checkbox-wrapper" style="background:${task.color}"
+      >
         <input type="checkbox" id="${task.name}-${task.id}" class="checkbox" name="tasks"  ${
       task.isCompleted ? "checked" : "" 
     }>
