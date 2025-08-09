@@ -1,7 +1,8 @@
 
 :root {
-    --green: rgb(15, 71, 15);
-    --red: rgb(170, 26, 26);
+    --green: rgb(41, 185, 41);
+    
+    --red: rgb(212, 24, 24);
     --grey: grey;
     --aqua: rgb(86, 128, 114);
 }
@@ -34,20 +35,18 @@ ul {
 
 li {
     background-color: var(--grey);
-   
     display: grid;
-    border-radius: 10px;
-    padding-left: 40px;
+    border-radius: 5px;
     margin:0 0 10px 0;   
     align-items: baseline;
 }
 
 .completed {
-    border-left: 10px solid var(--green);
+    border-left: 20px solid var(--green);
 }
 
 .progress {
-    border-left: 10px solid var(--red);
+    border-left: 20px solid var(--red);
 }
 
 input {
