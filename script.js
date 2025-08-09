@@ -12,8 +12,10 @@ const dateNow = document.querySelector(".dateToday");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 //date
-const now = new Date(); 
-dateNow.textContent = now;
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+var now = new Date(); 
+dateNow.textContent = now.toLocaleDateString("en-US", options);
+
 
 if (localStorage.getItem("tasks")) {
   tasks.map((task) => {

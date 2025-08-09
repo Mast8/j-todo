@@ -85,6 +85,8 @@ button:hover {
     padding: 5px;
     display: inline-flex;
     align-items: baseline;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .list [type="checkbox"]:checked ~ span {
