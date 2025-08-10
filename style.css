@@ -58,6 +58,10 @@ span {
     width: 80%;
 }
 
+.dateToday {
+    width: auto;
+}
+
 .add {
     padding: 10px;
 }
@@ -72,11 +76,10 @@ button {
 
 button:hover {
     color: white;
-    background-color: var(--aqua);
+    background-color: var(--green);
 }
 
 .remove-task:hover {
-   
     background-color: var(--red);
 }
 
