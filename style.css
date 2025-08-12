@@ -1,6 +1,6 @@
 
 :root {
-    --green: rgb(41, 185, 41);
+    --green: rgb(36, 145, 36);
     
     --red: rgb(212, 24, 24);
     --grey: grey;
@@ -15,6 +15,7 @@ h1 {
     display: grid;
     justify-content: center;
     padding-top: 25px;
+    color: beige;
 }
 label, .title{
     color: white;
