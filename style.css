@@ -14,8 +14,10 @@ body {
 h1 {
     display: grid;
     justify-content: center;
+    text-align: center;
     padding-top: 25px;
-    color: beige;
+    font-size: 75px;
+    color: rgb(220, 230, 245);
 }
 label, .title{
     color: white;
@@ -98,7 +100,7 @@ button:hover {
 }
 
 .percentage {
-    font-size: 50px;
+    font-size: 62px;
     text-align: center;
     font-weight: bold;
 }
