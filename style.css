@@ -1,7 +1,6 @@
 
 :root {
     --green: rgb(36, 145, 36);
-    
     --red: rgb(212, 24, 24);
     --grey: grey;
     --aqua: rgb(86, 128, 114);
@@ -117,5 +116,5 @@ button:hover {
     display: grid;
     justify-content: center;
     justify-items: center;
-    
+    font-size: 20px;
 }
