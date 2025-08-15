@@ -53,15 +53,33 @@ todoForm.addEventListener("submit", function (e) {
     input.focus();
 });
 
+
+
 function validate(input){
   res = false;
   if(input.trim() === "")
-    alert("Todo is blank");
+    showError(input, 'To do is blank');
+    //alert("Todo is blank");
   else if(input.trim().length < 3 ){
     alert("Todo is too short");
-  } else res = true;
+  } else {
+       
+        res = true;
+        showElement("small", 'none');
+    }
   return res;
+
 }
+
+function showError(input, message) {
+    const small = document.querySelector('small');
+    small.innerText = message;
+}
+
+function showElement(element, none){
+    document.querySelector(element).style.display=none;
+}
+
 
 function liStatus(task){
   var classLI = task.isCompleted ? "completed" : "progress";
