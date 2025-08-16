@@ -118,3 +118,12 @@ button:hover {
     justify-items: center;
     font-size: 20px;
 }
+
+small, h2 {
+    display: flex;
+    font-size: 20px;
+    
+    justify-content: center;
+    color: rgb(196, 12, 12);
+}
+
