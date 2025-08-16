@@ -122,7 +122,7 @@ button:hover {
 small, h2 {
     display: flex;
     font-size: 20px;
-    
+    padding-bottom: 10px;
     justify-content: center;
     color: rgb(196, 12, 12);
 }
