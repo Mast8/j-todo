@@ -58,13 +58,14 @@ todoForm.addEventListener("submit", function (e) {
 function validate(input){
   res = false;
   if(input.trim() === "")
-    showError('To do is blank');
+    showError(input,"To do is blank");
   else if(input.trim().length < 3 ){
-    showError('To do is too short');
-    //alert("Todo is too short");
+    showError(input, "To do is too short");
+    //fix to show if error 2nd attempt
   } else {
         res = true;
-        showElement("small", 'none');
+        showError(input, "");
+        //showElement("small", 'none');
     }
   return res;
 
