@@ -61,11 +61,9 @@ function validate(input){
     showError(input,"To do is blank");
   else if(input.trim().length < 3 ){
     showError(input, "To do is too short");
-    //fix to show if error 2nd attempt
   } else {
         res = true;
         showError(input, "");
-        //showElement("small", 'none');
     }
   return res;
 

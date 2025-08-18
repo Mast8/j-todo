@@ -127,3 +127,13 @@ small, h2 {
     color: rgb(196, 12, 12);
 }
 
+@media (max-width: 350px){
+    .row{
+        flex-direction: column;
+    }
+
+    .add {
+        width: 80px;
+        margin-top: 5px;
+    }
+}
