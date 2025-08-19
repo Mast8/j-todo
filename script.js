@@ -61,7 +61,10 @@ function validate(input){
     showError(input,"To do is blank");
   else if(input.trim().length < 3 ){
     showError(input, "To do is too short");
-  } else {
+    //validates if input contains only numbers
+  } else if(/^\d+$/.test(input))
+      showError(input, "To do is only numbers");
+    else{
         res = true;
         showError(input, "");
     }
