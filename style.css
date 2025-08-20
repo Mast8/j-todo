@@ -122,10 +122,15 @@ button:hover {
 small {
     display: flex;
     font-size: 20px;
-    padding-bottom: 10px;
+    padding-top: 10px;
     justify-content: center;
     color: rgb(196, 12, 12);
 }
+
+.inputError{
+    border: 1px solid #f00;
+}
+
 
 @media (max-width: 350px){
     .row{

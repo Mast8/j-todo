@@ -1,5 +1,6 @@
 
 const listContainer = document.getElementById("list"); 
+const inputError = document.getElementById("input-box"); 
 const todoForm = document.querySelector(".todo-form");
 
 const totalTasks = document.querySelector(".total-tasks span");
@@ -58,7 +59,11 @@ todoForm.addEventListener("submit", function (e) {
 function validate(input){
   res = false;
   if(input.trim() === "")
+    {
     showError(input,"To do is blank");
+    //inputborder
+    inputError.classList.add("inputError");}
+
   else if(input.trim().length < 3 ){
     showError(input, "To do is too short");
     //validates if input contains only numbers
@@ -67,6 +72,8 @@ function validate(input){
     else{
         res = true;
         showError(input, "");
+        // input border
+        inputError.classList.remove("inputError");
     }
   return res;
 
