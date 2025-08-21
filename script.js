@@ -62,13 +62,18 @@ function validate(input){
     {
     showError(input,"To do is blank");
     //inputborder
-    inputError.classList.add("inputError");}
+    addclass(inputError,"inputError")
+    //inputError.classList.add("inputError");
+    }
 
   else if(input.trim().length < 3 ){
     showError(input, "To do is too short");
+    addclass(inputError,"inputError")
     //validates if input contains only numbers
-  } else if(/^\d+$/.test(input))
+  } else if(/^\d+$/.test(input)){
       showError(input, "To do is only numbers");
+      addclass(inputError,"inputError")
+    }
     else{
         res = true;
         showError(input, "");
@@ -77,6 +82,10 @@ function validate(input){
     }
   return res;
 
+}
+
+function addclass(clas, className) {
+  clas.classList.add(className);
 }
 
 function showError(input, message) {
