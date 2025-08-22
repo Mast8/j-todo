@@ -85,6 +85,17 @@ button:hover {
     background-color: var(--red);
 }
 
+.checkbox {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+.checkbox:hover {
+    background-color: #ccc;
+}
+
+
 .checkbox-wrapper {
     padding: 5px;
     display: inline-flex;
