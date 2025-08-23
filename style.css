@@ -84,17 +84,20 @@ button:hover {
 .remove-task:hover {
     background-color: var(--red);
 }
-
 .checkbox {
+    border: 2px solid green;
+    display: flex;
     cursor: pointer;
     height: 20px;
     width: 20px;
     border-radius: 50%;
 }
-.checkbox:hover {
+input[type="checkbox"] ~ .checkbox:hover {
     background-color: #ccc;
 }
-
+input[type="checkbox"] {
+    /* display: none; */
+}
 
 .checkbox-wrapper {
     padding: 5px;

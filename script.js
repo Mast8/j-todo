@@ -114,9 +114,9 @@ function createTask(task) {
       <div class="checkbox-wrapper" style="background:${task.color}"
       >
         <input type="checkbox" id="${task.name}-${task.id}" class="checkbox" name="tasks"  ${
-      task.isCompleted ? "checked" : "" 
-    }>
-        <label for="${task.name}-${task.id}">
+      task.isCompleted ? "checked" : ""  
+    } 
+        <label class="checkbox" for="${task.name}-${task.id}">
           <div class="checkbox-empty"></div>
 
         </label>
