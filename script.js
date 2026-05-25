@@ -182,7 +182,7 @@ function createTask(task) {
 
   function countTasks() {
     
-    //Percentage of completed task
+    //percentage of completed task
       totalTasks.textContent = tasks.length;
       const completedTasksArray = tasks.filter((task) => task.isCompleted === true);
       

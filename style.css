@@ -6,8 +6,21 @@
     --aqua: rgb(86, 128, 114);
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-    background-color: darkgrey;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 h1 {
@@ -18,6 +31,23 @@ h1 {
     font-size: 70px;
     color: rgb(220, 230, 245);
 }
+
+.container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    align-items: flex-start;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+}
+
 label, .title{
     color: white;
 }
@@ -145,6 +175,7 @@ small {
     border: 2px solid #f00;
 }
 
+/* responsiveness */
 
 @media (max-width: 350px){
     .row{
@@ -154,5 +185,14 @@ small {
     .add {
         width: 80px;
         margin-top: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .stats-card {
+        max-width: 100%;
     }
 }
