@@ -29,12 +29,10 @@ body {
 }
 
 h1 {
-    display: grid;
-    justify-content: center;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--text-main);
     text-align: center;
-    padding-top: 25px;
-    font-size: 70px;
-    color: rgb(220, 230, 245);
 }
 
 .container {
@@ -96,6 +94,10 @@ li {
     transition: border-color 0.2s;
 }
 
+#input-box.inputError {
+    border-color: var(--red);
+}
+
 .dateToday {
     width: auto;
 }
@@ -150,11 +152,6 @@ input[type="checkbox"] {
     opacity: 0.5;
 }
 
-.percentage {
-    font-size: 62px;
-    text-align: center;
-    font-weight: bold;
-}
 
 .good {
     color: var(--green);
@@ -186,9 +183,14 @@ small {
     color: rgb(196, 12, 12);
 }
 
-.inputError{
-    border: 2px solid #f00;
+.percentage {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+    
 }
+
 
 /* responsiveness */
 
