@@ -3,9 +3,13 @@ const listContainer = document.getElementById("list");
 const inputError = document.getElementById("input-box"); 
 const todoForm = document.querySelector(".todo-form");
 
-const totalTasks = document.querySelector(".total-tasks span");
-const completedTasks = document.querySelector(".completed-tasks span");
-const remainingTasks = document.querySelector(".remaining-tasks span");
+const totalTasks = document.querySelector(".total-tasks");
+// const totalTasks = document.querySelector(".total-tasks span");
+// const completedTasks = document.querySelector(".completed-tasks span");
+// const remainingTasks = document.querySelector(".remaining-tasks span");
+
+const completedTasks = document.querySelector(".completed-tasks");
+const remainingTasks = document.querySelector(".remaining-tasks");
 
 const percentage = document.querySelector(".percentage");
 const dateNow = document.querySelector(".dateToday");

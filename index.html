@@ -16,11 +16,23 @@
                     <h1>To Do List</h1>
                     
                     <div class="row">
-                        <input type="text" name="name"  id="input-box" placeholder="To do?">
+                        <input type="text" name="name" id="input-box" placeholder="What needs to be done?">
                         <button class="add" >Add</button>
                     </div>
                     <small></small>
-                    <ul class="list" id="list"> </ul>
+                    <ul class="list" id="list"> 
+                        <!-- <li id="1779813612657" class="progress">
+                            <div class="checkbox-wrapper" style="background:#125246">
+                                <input type="checkbox" id="lol-1779813612657" class="checkbox" name="tasks" <label="" for="lol-1779813612657">
+                                <div class="checkbox-empty"></div>
+
+                                <span class="title" contenteditable="">lol   </span>
+                                <label "contenteditable"=""> 5/26/2026 </label>
+                                <button class="remove-task" title="Remove lol ">X </button>
+                            </div>
+                        
+                        </li> -->
+                    </ul>
                 </div>
             </form> 
             
@@ -32,20 +44,17 @@
             <div class="todo-stats"> -->
                 <h2>Dashboard</h2>
                 <span class="dateToday"></span>
-                <div class="total-tasks">
-                  Total Tasks: <span>0</span> 
+                <div class="stat-item">
+                    Total Tasks: <span class="total-tasks">0</span> 
                 </div>
                
-                <div class="remaining-tasks">
-                  In progress: <span >0</span>
+                <div class="stat-item">
+                    In progress: <span class="remaining-tasks">0</span>
                 </div>
-                <div class="completed-tasks" >
-                  Completed: <span class="good">0</span> 
-                     
-                  </div>
-                <span class="percentage"></span>
-                
-            </div>
+                <div class="stat-item">
+                    Completed: <span class="completed-tasks" class="good">0</span> 
+                </div>
+                 <span class="percentage"></span>
         </div>
         <script src="script.js"></script>
     </body>
