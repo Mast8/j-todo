@@ -40,7 +40,7 @@ h1 {
     gap: 30px;
     width: 100%;
     max-width: 900px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 .card {
@@ -62,18 +62,18 @@ label, .title{
 }
 
 ul {
-    padding-right: 40px;
-    padding-left: 40px;
+    padding-right: 4px;
+    padding-left: 4px;
     display: block;
     
 }
 
 li {
     background-color: var(--grey);
-    display: grid;
+    display: flex;
     border-radius: 5px;
     margin:0 0 10px 0;   
-    align-items: baseline;
+   
 }
 
 .completed {
@@ -103,7 +103,7 @@ li {
 }
 
 .add {
-    padding: 10px;
+    padding: 13px;
 }
 
 button {
@@ -135,14 +135,13 @@ input[type="checkbox"] ~ .checkbox:hover {
     background-color: #ccc;
 }
 
-input[type="checkbox"] {
-    /* display: none; */
-}
-
 .checkbox-wrapper {
-    padding: 5px;
-    display: inline-flex;
-    align-items: baseline;
+    padding: 10px;
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center; 
+    width: 100%; 
+    gap: 15px; 
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -184,11 +183,9 @@ small {
 }
 
 .percentage {
-    font-size: 48px;
+    font-size: 39px;
     font-weight: bold;
     text-align: center;
-    margin-top: 25px;
-    
 }
 
 
@@ -197,19 +194,39 @@ small {
 @media (max-width: 350px){
     .row{
         flex-direction: column;
+        gap: 8px;
+    }
+
+   
+
+    #input-box {
+        width: 100%;
     }
 
     .add {
-        width: 80px;
-        margin-top: 5px;
+        width: 100%; 
+        margin-left: 0;
+    }
+    
+    .checkbox-wrapper {
+        gap: 8px; 
     }
 }
 
 @media (max-width: 768px) {
+    
+    
     .container {
-        flex-direction: column;
+        flex-direction: column; 
+    
     }
+    
+    .todo-card {
+        flex: 2; /* Allocates more horizontal workspace to the To-Do task area */
+    }
+
     .stats-card {
-        max-width: 100%;
+        flex: 1; /* Dashboard stays clean and compact on the right side */
     }
 }
+
