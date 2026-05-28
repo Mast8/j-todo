@@ -51,6 +51,10 @@ h1 {
     flex: 1;
 }
 
+h2 {
+    text-align: center;
+}
+
 label, .title{
     color: white;
 }
@@ -99,7 +103,9 @@ li {
 }
 
 .dateToday {
-    width: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 1em;
 }
 
 .add {
