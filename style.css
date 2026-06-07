@@ -208,6 +208,7 @@ small {
     }
 
    
+   
 
     #input-box {
         width: 100%;
@@ -224,11 +225,8 @@ small {
 }
 
 @media (max-width: 768px) {
-    
-    
     .container {
         flex-direction: column; 
-    
     }
     
     .todo-card {
@@ -236,7 +234,10 @@ small {
     }
 
     .stats-card {
-        flex: 1; /* Dashboard stays clean and compact on the right side */
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 auto;   
     }
 }
 
