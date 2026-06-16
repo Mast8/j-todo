@@ -48,7 +48,7 @@ h1 {
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    flex: 1;
+    width: 100%;
 }
 
 h2 {
@@ -150,7 +150,7 @@ input[type="checkbox"] ~ .checkbox:hover {
     gap: 15px; 
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .list [type="checkbox"]:checked ~ span {
@@ -197,6 +197,7 @@ small {
 
 .stats-card {
     height: 18em;
+    width: 40%;
 }
 
 /* responsiveness */
@@ -206,9 +207,6 @@ small {
         flex-direction: column;
         gap: 8px;
     }
-
-   
-   
 
     #input-box {
         width: 100%;
