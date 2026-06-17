@@ -103,6 +103,8 @@ li {
 }
 
 .dateToday {
+    font-weight: bold;
+    color: rebeccapurple;
     display: flex;
     flex-direction: row-reverse;
     padding-bottom: 1em;
@@ -197,7 +199,7 @@ small {
 
 .stats-card {
     height: 18em;
-    width: 40%;
+    width: 42%;
 }
 
 /* responsiveness */
